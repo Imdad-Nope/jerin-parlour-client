@@ -12,7 +12,7 @@ const Bookings = ({ booking, date, setSuccess }) => {
 
 
     const { user } = useAuth()
-    const initialInfo = { patientName: user.displayName, email: user.email, phoneNumber: '' }
+    const initialInfo = { patientName: user.displayName, email: user.email, phoneNumber: '', age: '' }
     const [appointment, setAppointment] = useState(initialInfo)
     const { name, description, price, img } = booking;
     const { reset } = useForm({})
@@ -43,7 +43,7 @@ const Bookings = ({ booking, date, setSuccess }) => {
             ...appointment
         }
 
-        fetch(`http://localhost:5000/appoint`, {
+        fetch("https://peaceful-ocean-02990.herokuapp.com/appoint", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -118,6 +118,19 @@ const Bookings = ({ booking, date, setSuccess }) => {
                                             placeholder="Your Email"
                                             label="Email"
                                             defaultValue={user.email}
+                                            onBlur={handleOnBlur}
+                                            color="warning"
+                                            fullWidth
+                                            variant="standard"
+                                            required
+                                        />
+                                        <TextField
+                                            // autoFocus
+                                            margin="dense"
+                                            name='age'
+                                            placeholder='Your Age'
+                                            label="Your Age"
+                                            defaultValue=''
                                             onBlur={handleOnBlur}
                                             color="warning"
                                             fullWidth

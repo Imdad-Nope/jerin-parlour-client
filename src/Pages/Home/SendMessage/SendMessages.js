@@ -20,7 +20,7 @@ const SendMessages = () => {
     }
 
     const handleSubmit = e => {
-        fetch(`http://localhost:5000/addMessages`, {
+        fetch(`https://peaceful-ocean-02990.herokuapp.com/addMessages`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
