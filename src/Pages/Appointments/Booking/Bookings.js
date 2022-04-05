@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import useAuth from '../../../Hooks/useAuth/useAuth';
 import { useForm } from 'react-hook-form';
+import { NavLink } from 'react-router-dom';
 
 const Bookings = ({ booking, date, setSuccess }) => {
 
@@ -75,9 +76,11 @@ const Bookings = ({ booking, date, setSuccess }) => {
 
                     <Box>
                         <div>
-                            <Button variant="outlined" onClick={handleClickOpen}>
+
+                            <Button style={{ textDecoration: 'none', background: ' #FEF9E7' }} variant="outlined" onClick={handleClickOpen}>
                                 Appoint
                             </Button>
+
                             <Dialog open={open} >
                                 <form onSubmit={handleSubmit}>
                                     <DialogTitle>Take Your Appointment</DialogTitle>

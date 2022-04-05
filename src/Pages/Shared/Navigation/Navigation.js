@@ -27,16 +27,16 @@ const Navigation = () => {
                         Jerin Parlour
                     </Typography>
                     <Box>
-                        <NavLink to="/home">
+                        <NavLink to="/home" style={{ textDecoration: 'none' }}>
                             <Button>Home</Button>
                         </NavLink>
-                        <NavLink to="/supports">
+                        <NavLink to="/supports" style={{ textDecoration: 'none' }}>
                             <Button>Support</Button>
                         </NavLink>
-                        <NavLink to="/appointments">
+                        <NavLink to="/appointments" style={{ textDecoration: 'none' }}>
                             <Button>Appointments</Button>
                         </NavLink>
-                        <NavLink to="/dashboard">
+                        <NavLink to="/dashboard" style={{ textDecoration: 'none' }}>
                             <Button>Dashboard</Button>
                         </NavLink>
                     </Box>

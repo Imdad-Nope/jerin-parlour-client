@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import woman from '../../../Image/woman.png';
 import { Button, Container, Typography } from '@mui/material';
 import { height } from '@mui/system';
+import { NavLink } from 'react-router-dom';
 
 
 const verticalCenter = {
@@ -31,7 +32,9 @@ const Banner = () => {
                             <Typography variant="body2" gutterBottom component="div" sx={{ my: 3 }}>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, vero quibusdam voluptates enim laborum voluptatum assumenda, distinctio officia nihil mollitia voluptate nostrum molestias obcaecati similique.
                             </Typography>
-                            <Button variant="contained">Get An Appointment</Button>
+                            <NavLink to="/appointments" style={{ textDecoration: 'none' }}>
+                                <Button variant="contained">Get An Appointment</Button>
+                            </NavLink>
                         </Box>
                     </Grid >
                     <Grid item xs={12} md={6} style={{ marginTop: '40px' }}>
