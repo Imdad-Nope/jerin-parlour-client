@@ -16,10 +16,11 @@ const Register = () => {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
-        console.log(field, value)
+
     }
 
     const handleRegisterSubmit = e => {
+        e.preventDefault();
         if (loginData.password !== loginData.password2) {
             alert('Please retype your password')
             return;
@@ -27,7 +28,6 @@ const Register = () => {
 
         registerUser(loginData.email, loginData.password, loginData.name, navigate, location)
 
-        e.preventDefault();
     }
     return (
         <Container>
@@ -35,7 +35,7 @@ const Register = () => {
                 <Typography variant="subtitle1" gutterBottom component="div">
                     Register
                 </Typography>
-                {!isLoading && <form onSubmit={handleRegisterSubmit}>
+                {<form onSubmit={handleRegisterSubmit}>
                     <TextField
                         sx={{ width: '40%', mt: 2 }}
                         id="standard-basic"
@@ -77,10 +77,10 @@ const Register = () => {
                     <NavLink to="/login" style={{ textDecoration: 'none' }}>
                         <Button variant='text'>Already have an account? Please Login</Button>
                     </NavLink>
+                    {isLoading && <CircularProgress />}
+                    {user?.email && <Alert severity="success">Register is done successfully!</Alert>}
+                    {authError && <Alert severity="error">{authError}</Alert>}
                 </form>}
-                {isLoading && <CircularProgress />}
-                {user?.email && <Alert severity="success">Register is done successfully!</Alert>}
-                {authError && <Alert severity="error">{authError}</Alert>}
             </Grid>
         </Container>
     );

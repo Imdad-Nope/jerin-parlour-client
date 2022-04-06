@@ -16,7 +16,7 @@ const Login = () => {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
-        console.log(field, value, newLoginData)
+
     }
 
     const handleLoginSubmit = e => {
@@ -26,7 +26,7 @@ const Login = () => {
 
     const handleGoogle = () => {
         signInWithGoogle(location, navigate)
-        console.log('ok')
+
     }
     return (
         <Container>
@@ -34,7 +34,7 @@ const Login = () => {
                 <Typography variant="subtitle1" gutterBottom component="div">
                     Login
                 </Typography>
-                {!isLoading && <form onSubmit={handleLoginSubmit}>
+                {<form onSubmit={handleLoginSubmit}>
                     <TextField
                         sx={{ width: '40%', mt: 2 }}
                         id="standard-basic"
@@ -58,10 +58,11 @@ const Login = () => {
                     <NavLink to="/register" style={{ textDecoration: 'none' }}>
                         <Button variant='text'>Don't have an account? Please Register</Button>
                     </NavLink>
+                    {isLoading && <CircularProgress />}
+                    {user?.email && <Alert severity="success">Register is done successfully!</Alert>}
+                    {authError && <Alert severity="error">{authError}</Alert>}
                 </form>}
-                {isLoading && <CircularProgress />}
-                {user?.email && <Alert severity="success">Register is done successfully!</Alert>}
-                {authError && <Alert severity="error">{authError}</Alert>}
+                <p>----------------------</p>
                 <Button onClick={handleGoogle}>Google Sign In</Button>
             </Grid>
         </Container>

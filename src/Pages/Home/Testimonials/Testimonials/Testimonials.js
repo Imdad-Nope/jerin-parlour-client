@@ -1,11 +1,16 @@
-import { Container, Grid, Typography } from '@mui/material';
-import { Box } from '@mui/system';
 import React from 'react';
+import { Grid, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import SwiperCore, { Autoplay, EffectCoverflow, Pagination, } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./Testimonials.css";
+import face from '../../../../Image/Facetreatment.png';
+import hair from '../../../../Image/Hairstyle.png';
+import skin from '../../../../Image/Skincare.png';
+import face2 from '../../../../Image/Facetreatment.png';
+import skin2 from '../../../../Image/Skincare.png';
 
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
 
@@ -59,7 +64,7 @@ const Testimonials = () => {
                                                 <div className="content">
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In corporis nisi nesciunt quibusdam beatae quaerat quis optio. Libero vero unde saepe repellendus soluta vitae accusamus!</p>
                                                     <div className='imgBx'>
-                                                        <img src="https://images.newscientist.com/wp-content/uploads/2017/06/14111650/00000-00568744.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" alt="" />
+                                                        <img src={face} alt="" />
                                                     </div>
                                                     <div className="details">
                                                         <h2>Someone Famous <br /> <span>Website Designer</span></h2>
@@ -84,7 +89,7 @@ const Testimonials = () => {
                                                 <div className="content">
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In corporis nisi nesciunt quibusdam beatae quaerat quis optio. Libero vero unde saepe repellendus soluta vitae accusamus!</p>
                                                     <div className='imgBx'>
-                                                        <img src="https://images.newscientist.com/wp-content/uploads/2017/06/14111650/00000-00568744.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" alt="" />
+                                                        <img src={hair} alt="" />
                                                     </div>
                                                     <div className="details">
                                                         <h2>Someone Famous <br /> <span>Website Designer</span></h2>
@@ -110,7 +115,7 @@ const Testimonials = () => {
                                                 <div className="content">
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In corporis nisi nesciunt quibusdam beatae quaerat quis optio. Libero vero unde saepe repellendus soluta vitae accusamus!</p>
                                                     <div className='imgBx'>
-                                                        <img src="https://images.newscientist.com/wp-content/uploads/2017/06/14111650/00000-00568744.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" alt="" />
+                                                        <img src={skin} alt="" />
                                                     </div>
                                                     <div className="details">
                                                         <h2>Someone Famous <br /> <span>Website Designer</span></h2>
@@ -135,7 +140,7 @@ const Testimonials = () => {
                                                 <div className="content">
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In corporis nisi nesciunt quibusdam beatae quaerat quis optio. Libero vero unde saepe repellendus soluta vitae accusamus!</p>
                                                     <div className='imgBx'>
-                                                        <img src="https://images.newscientist.com/wp-content/uploads/2017/06/14111650/00000-00568744.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" alt="" />
+                                                        <img src={hair} alt="" />
                                                     </div>
                                                     <div className="details">
                                                         <h2>Someone Famous <br /> <span>Website Designer</span></h2>
@@ -160,7 +165,7 @@ const Testimonials = () => {
                                                 <div className="content">
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In corporis nisi nesciunt quibusdam beatae quaerat quis optio. Libero vero unde saepe repellendus soluta vitae accusamus!</p>
                                                     <div className='imgBx'>
-                                                        <img src="https://images.newscientist.com/wp-content/uploads/2017/06/14111650/00000-00568744.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" alt="" />
+                                                        <img src={skin2} alt="" />
                                                     </div>
                                                     <div className="details">
                                                         <h2>Someone Famous <br /> <span>Website Designer</span></h2>
@@ -186,7 +191,7 @@ const Testimonials = () => {
                                                 <div className="content">
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In corporis nisi nesciunt quibusdam beatae quaerat quis optio. Libero vero unde saepe repellendus soluta vitae accusamus!</p>
                                                     <div className='imgBx'>
-                                                        <img src="https://images.newscientist.com/wp-content/uploads/2017/06/14111650/00000-00568744.jpg?crop=16:9,smart&width=1200&height=675&upscale=true" alt="" />
+                                                        <img src={face2} alt="" />
                                                     </div>
                                                     <div className="details">
                                                         <h2>Someone Famous <br /> <span>Website Designer</span></h2>
