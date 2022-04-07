@@ -44,7 +44,7 @@ const SendMessages = () => {
                 <Grid item xs={12} sx={{ mt: 10 }} >
 
                     <Typography style={{ fontWeight: 700 }} variant="h4" gutterBottom component="div">
-                        <span style={{ color: '#F14493' }}> Let us support your</span> <br /> <span style={{ color: '#F14493' }}>patients,  professionally</span>.
+                        <span style={{ color: '#F14493' }}> Let Us Makeup Your</span> <br /> <span style={{ color: '#F14493' }}>Skin,  Professionally</span>.
                     </Typography>
 
                 </Grid>

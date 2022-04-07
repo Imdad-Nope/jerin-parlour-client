@@ -14,6 +14,9 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Appointments from './Pages/Appointments/Appointments/Appointments';
 import Supports from './Pages/Supports/Supports/Supports';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import AddSpecialist from './Pages/Dashboard/AddSpecialist/AddSpecialist';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import Payment from './Pages/Dashboard/Dashboard/Payment/Payment';
 
 function App() {
   return (
@@ -31,13 +34,17 @@ function App() {
               path="/dashboard"
               element={<PrivateRoute>
                 <Dashboard></Dashboard>
-              </PrivateRoute>}
-            />
+              </PrivateRoute>}>
+
+              <Route exact path="/dashboard" element={<DashboardHome />} />
+              <Route path='/dashboard/addSpecialist' element={<AddSpecialist />} />
+              <Route path='/dashboard/makeAdmin' element={<MakeAdmin />} />
+
+            </Route>
             <Route exact path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboardHome" element={<DashboardHome />} />
             <Route path="/supports" element={<Supports />} />
           </Routes>
         </BrowserRouter>
