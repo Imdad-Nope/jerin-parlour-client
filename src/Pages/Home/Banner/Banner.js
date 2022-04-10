@@ -1,12 +1,11 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import woman from '../../../Image/woman.png';
 import { Button, Container, Typography } from '@mui/material';
-import { height } from '@mui/system';
 import { NavLink } from 'react-router-dom';
-
+import { makeStyles } from '@mui/styles';
+import { useTheme } from '@mui/material';
 
 const verticalCenter = {
     display: 'flex',
@@ -20,11 +19,20 @@ const verticalCenter = {
 }
 
 const Banner = () => {
+    // const theme = useTheme()
+    // const useStyle = makeStyles({
+    //     responsive: {
+    //         [theme.breakpoints.up('sm')]: {
+
+    //         }
+    //     }
+    // });
+    // const { responsive } = useStyle()
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7' }}>
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7' }} >
             <Container>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={6} style={{ textAlign: 'left', ...verticalCenter }}>
+                <Grid container spacing={2} >
+                    <Grid item xs={12} sm={6} md={6} style={{ textAlign: 'left', ...verticalCenter }}>
                         <Box>
                             <Typography variant="h3" gutterBottom component="div" style={{ fontWeight: 'bold' }}>
                                 BEAUTY SALON<br /> FOR EVERY WOMAN
@@ -37,7 +45,7 @@ const Banner = () => {
                             </NavLink>
                         </Box>
                     </Grid >
-                    <Grid item xs={12} md={6} style={{ marginTop: '40px' }}>
+                    <Grid item xs={12} sm={6} md={6} style={{ marginTop: '40px' }}>
                         <img
                             style={{ width: 410 }}
                             src={woman} alt="" />

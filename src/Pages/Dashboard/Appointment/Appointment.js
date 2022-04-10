@@ -35,11 +35,15 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const Appointment = ({ date }) => {
 
     const [appointment, setAppointment] = useState([])
-    const { user } = useAuth()
+    const { user, token } = useAuth()
 
     useEffect(() => {
         const url = `https://peaceful-ocean-02990.herokuapp.com/appointments?email=${user.email}&date=${date}`
-        fetch(url)
+        fetch(url, {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
             .then(res => res.json())
             .then(data => setAppointment(data))
     }, [date])

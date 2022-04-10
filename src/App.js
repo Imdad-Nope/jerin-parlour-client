@@ -17,6 +17,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AddSpecialist from './Pages/Dashboard/AddSpecialist/AddSpecialist';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import Payment from './Pages/Dashboard/Dashboard/Payment/Payment';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -37,8 +38,8 @@ function App() {
               </PrivateRoute>}>
 
               <Route exact path="/dashboard" element={<DashboardHome />} />
-              <Route path='/dashboard/addSpecialist' element={<AddSpecialist />} />
-              <Route path='/dashboard/makeAdmin' element={<MakeAdmin />} />
+              <Route path='/dashboard/addSpecialist' element={<AdminRoute><AddSpecialist /></AdminRoute>} />
+              <Route path='/dashboard/makeAdmin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
 
             </Route>
             <Route exact path="/" element={<Home />} />

@@ -20,6 +20,7 @@ import {
     Link,
     Outlet,
 } from "react-router-dom";
+import useAuth from '../../../Hooks/useAuth/useAuth';
 
 
 const drawerWidth = 200;
@@ -28,6 +29,7 @@ function Dashboard(props) {
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const { admin } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -43,12 +45,16 @@ function Dashboard(props) {
             <Link style={{ textDecoration: 'none' }} to="/dashboard">
                 <Button>Dashboard</Button>
             </Link>
-            <Link style={{ textDecoration: 'none' }} to="/dashboard/addSpecialist">
-                <Button>Add Specialist</Button>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to="/dashboard/makeAdmin">
-                <Button>Make Admin</Button>
-            </Link>
+            {admin && <Box>
+                <Link style={{ textDecoration: 'none' }} to="/dashboard/addSpecialist">
+                    <Button>Add Specialist</Button>
+                </Link>
+                <Link style={{ textDecoration: 'none' }} to="/dashboard/makeAdmin">
+                    <Button>Make Admin</Button>
+                </Link>
+            </Box>
+
+            }
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
