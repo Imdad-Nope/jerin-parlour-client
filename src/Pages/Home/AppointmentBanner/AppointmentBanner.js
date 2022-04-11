@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Container, Grid, Paper, Typography } from '@mui/material';
+import { Box, Container, Grid, Paper, Typography, useTheme } from '@mui/material';
 import facewash from '../../../Image/facewash.png';
+import { makeStyles } from '@mui/styles';
 
 const fixingItems = {
     display: 'flex',
@@ -11,8 +12,23 @@ const fixingItems = {
 }
 
 const AppointmentBanner = () => {
+
+    const theme = useTheme()
+    const useStyles = makeStyles({
+        responsive: {
+
+            [theme.breakpoints.down('sm')]: {
+                width: 420
+            },
+            // [theme.breakpoints.down('md')]: {
+            //     width: 860
+            // },
+        }
+    });
+    const { responsive } = useStyles()
+
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '70px' }}>
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '70px' }} className={responsive}>
             <Container>
                 <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
                     <Grid item xs={6} md={6} style={{ alignItems: 'center', ...fixingItems }}>

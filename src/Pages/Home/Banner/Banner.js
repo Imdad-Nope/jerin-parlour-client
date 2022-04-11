@@ -2,10 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import woman from '../../../Image/woman.png';
-import { Button, Container, Typography } from '@mui/material';
+import { Button, Container, Typography, useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
-import { useTheme } from '@mui/material';
+
 
 const verticalCenter = {
     display: 'flex',
@@ -19,19 +19,24 @@ const verticalCenter = {
 }
 
 const Banner = () => {
-    // const theme = useTheme()
-    // const useStyle = makeStyles({
-    //     responsive: {
-    //         [theme.breakpoints.up('sm')]: {
 
-    //         }
-    //     }
-    // });
-    // const { responsive } = useStyle()
+    const theme = useTheme()
+    const useStyles = makeStyles({
+        responsive: {
+            [theme.breakpoints.down('sm')]: {
+                width: 420
+            },
+            // [theme.breakpoints.down('lg')]: {
+            //     width: 820
+            // },
+        },
+    })
+    const { responsive } = useStyles();
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7' }} >
-            <Container>
-                <Grid container spacing={2} >
+
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7' }} className={responsive}>
+            <Container >
+                <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={6} style={{ textAlign: 'left', ...verticalCenter }}>
                         <Box>
                             <Typography variant="h3" gutterBottom component="div" style={{ fontWeight: 'bold' }}>
@@ -45,7 +50,7 @@ const Banner = () => {
                             </NavLink>
                         </Box>
                     </Grid >
-                    <Grid item xs={12} sm={6} md={6} style={{ marginTop: '40px' }}>
+                    <Grid item xs={12} md={6} style={{ marginTop: '40px' }}>
                         <img
                             style={{ width: 410 }}
                             src={woman} alt="" />

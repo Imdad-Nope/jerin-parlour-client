@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import SwiperCore, { Autoplay, EffectCoverflow, Pagination, } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,14 +11,29 @@ import hair from '../../../../Image/Hairstyle.png';
 import skin from '../../../../Image/Skincare.png';
 import face2 from '../../../../Image/Facetreatment.png';
 import skin2 from '../../../../Image/Skincare.png';
+import { makeStyles } from '@mui/styles';
 
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
 
 
 const Testimonials = () => {
+
+    const theme = useTheme()
+    const useStyles = makeStyles({
+        responsive: {
+
+            [theme.breakpoints.down('sm')]: {
+                width: 420
+            },
+            // [theme.breakpoints.down('md')]: {
+            //     width: 860
+            // },
+        }
+    });
+    const { responsive } = useStyles()
     return (
 
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} className={responsive}>
             <Grid style={{
                 justifyContent: 'center',
                 alignItems: 'center',

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Alert, Button, Container, FormControl, Grid, OutlinedInput, TextField, Typography } from '@mui/material';
+import { Alert, Button, Container, FormControl, Grid, OutlinedInput, TextField, Typography, useTheme } from '@mui/material';
 import { Box, height } from '@mui/system';
 import { useForm } from 'react-hook-form';
+import { makeStyles } from '@mui/styles';
 
 
 const SendMessages = () => {
@@ -37,9 +38,25 @@ const SendMessages = () => {
             })
 
         e.preventDefault()
-    }
+    };
+
+
+    const theme = useTheme()
+    const useStyles = makeStyles({
+        responsive: {
+
+            [theme.breakpoints.down('sm')]: {
+                width: 420
+            },
+            // [theme.breakpoints.down('md')]: {
+            //     width: 860
+            // },
+        }
+    });
+    const { responsive } = useStyles()
+
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '80px', marginBottom: '100px', padding: '30px' }} >
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '80px', marginBottom: '100px', padding: '30px' }} className={responsive}>
             <Container >
                 <Grid item xs={12} sx={{ mt: 10 }} >
 

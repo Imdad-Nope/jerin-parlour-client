@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 
+
 const verticalCenter = {
     display: 'flex',
     padding: '50px',
@@ -17,9 +18,9 @@ const verticalCenter = {
 const Service = ({ service }) => {
     const { name, description, img, price } = service;
     return (
-        <Grid item xs={12} sm={4} md={4} style={verticalCenter}>
-            {/* <Container> */}
-            <Card sx={{ minWidth: 275, boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' }}>
+
+        <Grid item xs={4} sm={4} md={4} style={verticalCenter} >
+            <Card sx={{ minWidth: 275, boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' }} >
                 <CardMedia
                     component="img"
                     style={{ width: 'auto', height: 80, margin: '0 auto' }}
@@ -38,7 +39,6 @@ const Service = ({ service }) => {
                     </Typography>
                 </CardContent>
             </Card>
-            {/* </Container> */}
         </Grid >
     );
 };

@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth/useAuth';
 import { makeStyles } from '@mui/styles';
-import { useTheme } from '@mui/material';
+import { createTheme, useTheme } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -19,6 +19,15 @@ const Navigation = () => {
 
     const theme = useTheme()
     const useStyle = makeStyles({
+        responsive: {
+
+            [theme.breakpoints.down('sm')]: {
+                width: 420
+            },
+            // [theme.breakpoints.down('md')]: {
+            //     width: 860
+            // },
+        },
         navItems: {
             color: 'yellowGreen',
             textDecoration: 'none'
@@ -30,7 +39,8 @@ const Navigation = () => {
         },
         mobileNav: {
             [theme.breakpoints.down('sm')]: {
-                display: 'none'
+                display: 'none',
+
             }
         },
         logo: {
@@ -43,7 +53,8 @@ const Navigation = () => {
             textDecoration: 'none'
         }
     })
-    const { navItems, desktopNav, mobileNav, logo, mobileIcon } = useStyle()
+
+    const { navItems, desktopNav, mobileNav, logo, mobileIcon, responsive } = useStyle()
 
     const [state, setState] = React.useState(false);
 
@@ -80,7 +91,7 @@ const Navigation = () => {
 
     return (
         <>
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }} className={responsive} >
                 <AppBar position="static" style={{ backgroundColor: '#FEF9E7' }}>
                     <Toolbar>
                         <IconButton

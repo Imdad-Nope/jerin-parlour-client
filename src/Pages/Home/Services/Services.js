@@ -5,7 +5,8 @@ import Facetreatment from '../../../Image/Facetreatment.png';
 import Hairstyle from '../../../Image/Hairstyle.png';
 import Skincare from '../../../Image/Skincare.png';
 import Service from '../Service/Service';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, useTheme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const services = [
     {
@@ -29,9 +30,25 @@ const services = [
 ]
 
 const Services = () => {
+
+    const theme = useTheme()
+    const useStyles = makeStyles({
+        responsive: {
+
+            [theme.breakpoints.down('sm')]: {
+                width: 420
+            },
+            // [theme.breakpoints.down('md')]: {
+            //     width: 860
+            // },
+        },
+    });
+
+    const { responsive } = useStyles();
     return (
-        <Container>
-            <Box sx={{ flexGrow: 1 }}>
+
+        <Box sx={{ flexGrow: 1 }} className={responsive}>
+            <Container>
                 <Typography variant='h5' gutterBottom sx={{ my: 5, fontWeight: 'bold' }}>
                     Our Awesome <span style={{ color: 'red' }}>Services</span>
                 </Typography>
@@ -43,8 +60,8 @@ const Services = () => {
                         ></Service>)
                     }
                 </Grid>
-            </Box >
-        </Container>
+            </Container>
+        </Box >
     );
 };
 

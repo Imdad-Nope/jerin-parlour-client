@@ -6,11 +6,25 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Grid from '@mui/material/Grid';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, useTheme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const Footer = () => {
+    const theme = useTheme()
+    const useStyles = makeStyles({
+        responsive: {
+
+            [theme.breakpoints.down('sm')]: {
+                width: 420
+            },
+            // [theme.breakpoints.down('md')]: {
+            //     width: 860
+            // },
+        }
+    });
+    const { responsive } = useStyles()
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#F14493', padding: '15px' }}>
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#F14493', padding: '15px' }} className={responsive}>
             <Container>
                 <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
                     <Grid item xs={12} md={3} sx={{ display: 'flex', flexWrap: 'wrap', mt: 6 }}>

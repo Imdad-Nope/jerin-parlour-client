@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import useAuth from '../../../Hooks/useAuth/useAuth';
+import { Grid } from '@mui/material';
 
 
 
@@ -68,37 +69,37 @@ const Appointment = ({ date }) => {
     }
 
     return (
-        <div>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Name</StyledTableCell>
-                            <StyledTableCell >Service</StyledTableCell>
-                            <StyledTableCell >Age</StyledTableCell>
-                            <StyledTableCell >Pay With</StyledTableCell>
-                            <StyledTableCell >Status</StyledTableCell>
-                            <StyledTableCell >Remove Data</StyledTableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {appointment.map((row) => (
-                            <StyledTableRow key={row._id}>
-                                <StyledTableCell component="th" scope="row">
-                                    {row.patientName}
-                                </StyledTableCell>
-                                <StyledTableCell>{row.serviceName}</StyledTableCell>
-                                <StyledTableCell>{row.age}</StyledTableCell>
-                                <StyledTableCell>{"pay"}</StyledTableCell>
-                                <StyledTableCell>{"pending"}</StyledTableCell>
-                                <StyledTableCell><Button onClick={() => handleDelete(row._id)}>Remove</Button>
-                                </StyledTableCell>
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+        // <Grid item xs={12} md={12}>
+        <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                <TableHead>
+                    <TableRow>
+                        <StyledTableCell>Name</StyledTableCell>
+                        <StyledTableCell >Service</StyledTableCell>
+                        <StyledTableCell >Age</StyledTableCell>
+                        <StyledTableCell >Pay With</StyledTableCell>
+                        <StyledTableCell >Status</StyledTableCell>
+                        <StyledTableCell >Remove Data</StyledTableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {appointment.map((row) => (
+                        <StyledTableRow key={row._id}>
+                            <StyledTableCell component="th" scope="row">
+                                {row.patientName}
+                            </StyledTableCell>
+                            <StyledTableCell>{row.serviceName}</StyledTableCell>
+                            <StyledTableCell>{row.age}</StyledTableCell>
+                            <StyledTableCell>{"pay"}</StyledTableCell>
+                            <StyledTableCell>{"pending"}</StyledTableCell>
+                            <StyledTableCell><Button onClick={() => handleDelete(row._id)}>Remove</Button>
+                            </StyledTableCell>
+                        </StyledTableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+        // </Grid>
     );
 };
 
