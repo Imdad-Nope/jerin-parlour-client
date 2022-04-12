@@ -45,8 +45,8 @@ const SendMessages = () => {
     const useStyles = makeStyles({
         responsive: {
 
-            [theme.breakpoints.down('sm')]: {
-                width: 420
+            [theme.breakpoints.between('xs', 'sm')]: {
+                width: 450
             },
             // [theme.breakpoints.down('md')]: {
             //     width: 860
