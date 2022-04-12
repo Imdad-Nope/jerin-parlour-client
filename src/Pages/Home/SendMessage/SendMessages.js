@@ -46,7 +46,7 @@ const SendMessages = () => {
         responsive: {
 
             [theme.breakpoints.between('xs', 'sm')]: {
-                width: 450
+                background: '#FEF9E7'
             },
             // [theme.breakpoints.down('md')]: {
             //     width: 860

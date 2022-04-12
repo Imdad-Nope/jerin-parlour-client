@@ -15,7 +15,7 @@ const Footer = () => {
         responsive: {
 
             [theme.breakpoints.between('xs', 'sm')]: {
-                width: 450
+                background: '#F14493'
             },
             // [theme.breakpoints.down('md')]: {
             //     width: 860

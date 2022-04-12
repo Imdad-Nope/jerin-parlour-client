@@ -36,7 +36,7 @@ const Services = () => {
         responsive: {
 
             [theme.breakpoints.between('xs', 'sm')]: {
-                width: 450
+                background: '#fff'
             },
             // [theme.breakpoints.down('md')]: {
             //     width: 860

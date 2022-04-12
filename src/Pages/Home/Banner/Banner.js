@@ -24,7 +24,7 @@ const Banner = () => {
     const useStyles = makeStyles({
         responsive: {
             [theme.breakpoints.between('xs', 'sm')]: {
-                width: 450
+                background: 'green'
             },
             // [theme.breakpoints.down('lg')]: {
             //     width: 820
