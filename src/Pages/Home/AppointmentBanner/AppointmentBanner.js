@@ -28,7 +28,7 @@ const AppointmentBanner = () => {
     const { responsive } = useStyles()
 
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '70px' }} className={responsive}>
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '70px' }} minWidth='500px'>
             <Container>
                 <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
                     <Grid item xs={6} md={6} style={{ alignItems: 'center', ...fixingItems }}>

@@ -56,7 +56,7 @@ const SendMessages = () => {
     const { responsive } = useStyles()
 
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '80px', marginBottom: '100px', padding: '30px' }} className={responsive}>
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '80px', marginBottom: '100px', padding: '30px' }} minWidth='500px'>
             <Container >
                 <Grid item xs={12} sx={{ mt: 10 }} >
 

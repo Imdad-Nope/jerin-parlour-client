@@ -1,62 +1,54 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import { Box, Button, Container, Grid, Typography, useTheme } from '@mui/material';
 import woman from '../../../Image/woman.png';
-import { Button, Container, Typography, useTheme } from '@mui/material';
-import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 
 
-const verticalCenter = {
+const style = {
+    background: '#FEF9E7',
     display: 'flex',
+    textAlign: 'left',
     alignItems: 'center',
-    padding: '50px',
-    // width: '100%'
-    height: 500,
-    // border: 'solid 1px red'
-
-    // #DCD85A
+    minWidth: '500px'
 }
 
 const Banner = () => {
-
     const theme = useTheme()
     const useStyles = makeStyles({
         responsive: {
+            padding: theme.spacing(1),
             [theme.breakpoints.between('xs', 'sm')]: {
-                background: 'green'
+                // backgroundColor: theme.palette.secondary.main,
+                width: '450px !important',
+                margin: '0 auto'
             },
-            // [theme.breakpoints.down('lg')]: {
-            //     width: 820
-            // },
-        },
+        }
     })
-    const { responsive } = useStyles();
+    const classes = useStyles()
     return (
-
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7' }} className={responsive}>
-            <Container >
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} md={6} style={{ textAlign: 'left', ...verticalCenter }}>
-                        <Box>
-                            <Typography variant="h3" gutterBottom component="div" style={{ fontWeight: 'bold' }}>
-                                BEAUTY SALON<br /> FOR EVERY WOMAN
+        <Box sx={{ flexGrow: 1 }} style={style} >
+            <Container className={classes.responsive}>
+                <Grid container spacing={6} sx={{ alignItems: 'center' }} className={classes.responsive}>
+                    <Grid item xs={12} md={6} className={classes.responsive}>
+                        <Box className={classes.responsive}>
+                            <Typography variant="h3" gutterBottom component="div" sx={{ fontWeight: 600 }}>
+                                BEAUTY SALON <br /> FOR EVERY WOMAN
                             </Typography>
-                            <Typography variant="body2" gutterBottom component="div" sx={{ my: 3 }}>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, vero quibusdam voluptates enim laborum voluptatum assumenda, distinctio officia nihil mollitia voluptate nostrum molestias obcaecati similique.
+                            <Typography variant="body2" gutterBottom sx={{ my: 2 }}>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
+                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
+                                quasi quidem quibusdam.
                             </Typography>
-                            <NavLink to="/appointments" style={{ textDecoration: 'none' }}>
-                                <Button variant="contained">Get An Appointment</Button>
-                            </NavLink>
+                            <Button variant="contained" sx={{ background: '#F14493' }}>Get Appointment</Button>
                         </Box>
-                    </Grid >
-                    <Grid item xs={12} md={6} style={{ marginTop: '40px' }}>
-                        <img
-                            style={{ width: 410 }}
-                            src={woman} alt="" />
                     </Grid>
-                </Grid >
-            </Container>
+                    <Grid item xs={12} md={6} className={classes.responsive}>
+                        <img
+                            src={woman} alt="" width='420px' />
+                    </Grid>
+                </Grid>
+            </Container >
         </Box >
     );
 };

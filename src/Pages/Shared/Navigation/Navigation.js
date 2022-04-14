@@ -90,7 +90,7 @@ const Navigation = () => {
 
     return (
         <>
-            <Box sx={{ flexGrow: 1 }} className={responsive} >
+            <Box sx={{ flexGrow: 1 }} minWidth='500px' >
                 <AppBar position="static" style={{ backgroundColor: '#FEF9E7' }}>
                     <Toolbar>
                         <IconButton

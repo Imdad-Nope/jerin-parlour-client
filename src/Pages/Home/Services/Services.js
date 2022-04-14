@@ -47,7 +47,7 @@ const Services = () => {
     const { responsive } = useStyles();
     return (
 
-        <Box sx={{ flexGrow: 1 }} className={responsive}>
+        <Box sx={{ flexGrow: 1 }} minWidth='500px'>
             <Container>
                 <Typography variant='h5' gutterBottom sx={{ my: 5, fontWeight: 'bold' }}>
                     Our Awesome <span style={{ color: 'red' }}>Services</span>

@@ -17,17 +17,14 @@ const Footer = () => {
             [theme.breakpoints.between('xs', 'sm')]: {
                 background: '#F14493'
             },
-            // [theme.breakpoints.down('md')]: {
-            //     width: 860
-            // },
         }
     });
     const { responsive } = useStyles()
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#F14493', padding: '15px' }} className={responsive}>
+        <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#F14493', padding: '15px' }} minWidth='500px'>
             <Container>
-                <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
-                    <Grid item xs={12} md={3} sx={{ display: 'flex', flexWrap: 'wrap', mt: 6 }}>
+                <Grid container spacing={{ xs: 2, sm: 6, md: 4 }}>
+                    <Grid item xs={12} sm={6} md={3} sx={{ display: 'flex', flexWrap: 'wrap', mt: 6 }}>
                         <AddLocationAltIcon style={{ color: 'white', marginRight: '20px' }}></AddLocationAltIcon>
 
                         <Typography variant="body2" display="block" gutterBottom component="div" sx={{ color: 'white', textAlign: 'left' }}>

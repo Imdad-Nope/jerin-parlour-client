@@ -33,7 +33,7 @@ const Testimonials = () => {
     const { responsive } = useStyles()
     return (
 
-        <Box sx={{ flexGrow: 1 }} className={responsive}>
+        <Box sx={{ flexGrow: 1 }} minWidth='500px'>
             <Grid style={{
                 justifyContent: 'center',
                 alignItems: 'center',
