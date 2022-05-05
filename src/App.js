@@ -3,7 +3,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
@@ -14,10 +13,9 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Appointments from './Pages/Appointments/Appointments/Appointments';
 import Supports from './Pages/Supports/Supports/Supports';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
-import AddSpecialist from './Pages/Dashboard/AddSpecialist/AddSpecialist';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
-import Payment from './Pages/Dashboard/Dashboard/Payment/Payment';
 import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
+import AddTestimonials from './Pages/Dashboard/AddTestimonials/AddTestimonials';
 
 function App() {
   return (
@@ -38,7 +36,7 @@ function App() {
               </PrivateRoute>}>
 
               <Route exact path="/dashboard" element={<DashboardHome />} />
-              <Route path='/dashboard/addSpecialist' element={<AdminRoute><AddSpecialist /></AdminRoute>} />
+              <Route path='/dashboard/addTestimonials' element={<AdminRoute><AddTestimonials /></AdminRoute>} />
               <Route path='/dashboard/makeAdmin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
 
             </Route>

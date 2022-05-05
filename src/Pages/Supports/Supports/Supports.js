@@ -1,19 +1,17 @@
-import { Grid } from '@mui/material';
 import React from 'react';
-
-
+import SendMessages from '../../Home/SendMessage/SendMessages';
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
+import Doctors from '../Doctors/Doctors/Doctors';
 
 const Supports = () => {
-
-
     return (
-        <Grid sx={{ mt: 2, bgcolor: 'green' }}>
-            <Grid >
-                <h1>Honorable Doctors</h1>
-            </Grid>
-        </Grid>
-
-
+        <div>
+            <Navigation />
+            <Doctors />
+            <SendMessages />
+            <Footer />
+        </div>
     );
 };
 

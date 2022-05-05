@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import useAuth from '../../../Hooks/useAuth/useAuth';
-import { Grid } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 
@@ -77,9 +77,11 @@ const Appointment = ({ date }) => {
                         <StyledTableCell>Name</StyledTableCell>
                         <StyledTableCell >Service</StyledTableCell>
                         <StyledTableCell >Age</StyledTableCell>
-                        <StyledTableCell >Pay With</StyledTableCell>
-                        <StyledTableCell >Status</StyledTableCell>
-                        <StyledTableCell >Remove Data</StyledTableCell>
+                        {/* <StyledTableCell >Pay With</StyledTableCell> */}
+                        {/* <StyledTableCell >Status</StyledTableCell> */}
+                        <StyledTableCell> <Button startIcon={<DeleteIcon />}>
+                            Delete
+                        </Button></StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -90,9 +92,9 @@ const Appointment = ({ date }) => {
                             </StyledTableCell>
                             <StyledTableCell>{row.serviceName}</StyledTableCell>
                             <StyledTableCell>{row.age}</StyledTableCell>
-                            <StyledTableCell>{"pay"}</StyledTableCell>
-                            <StyledTableCell>{"pending"}</StyledTableCell>
-                            <StyledTableCell><Button onClick={() => handleDelete(row._id)}>Remove</Button>
+                            {/* <StyledTableCell>{"pay"}</StyledTableCell> */}
+                            {/* <StyledTableCell>{"pending"}</StyledTableCell> */}
+                            <StyledTableCell><Button className='ok sponsor' onClick={() => handleDelete(row._id)}>Delete <DeleteIcon /></Button>
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}

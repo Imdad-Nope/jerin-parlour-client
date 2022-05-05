@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Avatar, Button, CircularProgress, Grid, Paper, TextField, Typography } from '@mui/material';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth/useAuth';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -29,15 +30,48 @@ const Register = () => {
         registerUser(loginData.email, loginData.password, loginData.name, navigate, location)
 
     }
+
+    const body = {
+        minHeight: '625px',
+        background: '#b18cc1',
+
+    }
+
+    const paperStyle = {
+        width: '320px',
+        padding: '20px',
+        background: '#fff0f0',
+        marginTop: '10%'
+    }
+    const avatar = {
+        background: '#F14493'
+    };
+    const nav = {
+        textDecoration: 'none',
+        color: '#F14493'
+    };
+    const typo = {
+        marginBottom: '10px'
+    };
     return (
-        <Container>
-            <Grid columns={{ xs: 4, sm: 8, md: 12 }} sx={{ mt: 8 }}>
-                <Typography variant="subtitle1" gutterBottom component="div">
-                    Register
-                </Typography>
+
+        <Grid
+            container
+            justify='center'
+            alignItems='center'
+            direction='column'
+            style={body}
+        >
+            <Paper align='center' style={paperStyle}>
+                <Grid align='center'>
+                    <Avatar style={avatar}><HowToRegIcon></HowToRegIcon></Avatar>
+                    <Typography variant="h6" gutterBottom component="div" sx={{ color: '#F14493' }}>
+                        Please create an account</Typography>
+                </Grid>
                 {<form onSubmit={handleRegisterSubmit}>
                     <TextField
-                        sx={{ width: '40%', mt: 2 }}
+                        style={typo}
+                        fullWidth
                         id="standard-basic"
                         label="Your Name"
                         type="name"
@@ -46,9 +80,10 @@ const Register = () => {
                         variant="standard"
                         required
                     />
-                    <br />
+
                     <TextField
-                        sx={{ width: '40%', mt: 2 }}
+                        style={typo}
+                        fullWidth
                         id="standard-basic"
                         label="Your Email"
                         type="email"
@@ -57,9 +92,10 @@ const Register = () => {
                         variant="standard"
                         required
                     />
-                    <br />
+
                     <TextField
-                        sx={{ width: '40%', mt: 2 }}
+                        style={typo}
+                        fullWidth
                         id="standard-basic"
                         label="Your Password"
                         type="password"
@@ -68,9 +104,10 @@ const Register = () => {
                         variant="standard"
                         required
                     />
-                    <br />
+
                     <TextField
-                        sx={{ width: '40%', mt: 2 }}
+
+                        fullWidth
                         id="standard-basic"
                         label="Retype Your Password"
                         type="password"
@@ -79,18 +116,26 @@ const Register = () => {
                         variant="standard"
                         required
                     />
-                    <br />
-                    <Button variant='contained' type='submit' sx={{ width: '40%', mt: 2 }}>Register</Button>
-                    <br />
-                    <NavLink to="/login" style={{ textDecoration: 'none' }}>
-                        <Button variant='text'>Already have an account? Please Login</Button>
-                    </NavLink>
+
+                    <Grid align='left'>
+                        <Button variant='contained' type='submit' sx={{ my: 2, bgcolor: '#F14493' }}>Sign Up</Button>
+                    </Grid>
+
+                    <Typography variant='subtitle1'>
+                        Already have an account? <span>
+                            <NavLink to="/login" style={nav}>
+                                Sign In
+                            </NavLink>
+                        </span>
+                    </Typography>
                     {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">Register is done successfully!</Alert>}
                     {authError && <Alert severity="error">{authError}</Alert>}
                 </form>}
-            </Grid>
-        </Container>
+            </Paper>
+        </Grid>
+
+
     );
 };
 

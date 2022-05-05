@@ -6,12 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -42,29 +36,24 @@ function Dashboard(props) {
             <Link style={{ textDecoration: 'none' }} to="/appointments">
                 <Button>Appointments</Button>
             </Link>
+            <Divider />
             <Link style={{ textDecoration: 'none' }} to="/dashboard">
                 <Button>Dashboard</Button>
             </Link>
+            <Divider />
             {admin && <Box>
-                <Link style={{ textDecoration: 'none' }} to="/dashboard/addSpecialist">
-                    <Button>Add Specialist</Button>
+                <Link style={{ textDecoration: 'none' }} to="/dashboard/addTestimonials">
+                    <Button>Add Testimonials</Button>
                 </Link>
+                <Divider />
                 <Link style={{ textDecoration: 'none' }} to="/dashboard/makeAdmin">
                     <Button>Make Admin</Button>
                 </Link>
+                <Divider />
             </Box>
 
             }
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
+
         </div>
     );
 

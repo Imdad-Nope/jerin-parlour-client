@@ -14,31 +14,31 @@ const bookings = [
         img: facetreatment
     },
     {
-        name: "Face Treatment",
+        name: "Hair Cleaning",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio, natus commodi cum odit delectus?",
         price: 100,
         img: hairstyle
     },
     {
-        name: "Face Treatment",
+        name: "Face Wash",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio, natus commodi cum odit delectus?",
         price: 100,
         img: skincare
     },
     {
-        name: "Face Treatment",
+        name: "Make Beauty",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio, natus commodi cum odit delectus?",
         price: 100,
         img: facetreatment
     },
     {
-        name: "Face Treatment",
+        name: "Hair Style",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio, natus commodi cum odit delectus?",
         price: 100,
         img: hairstyle
     },
     {
-        name: "Face Treatment",
+        name: "Make up",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio, natus commodi cum odit delectus?",
         price: 100,
         img: skincare
@@ -49,9 +49,9 @@ const AvailableAppointments = ({ date }) => {
     const [success, setSuccess] = useState(false)
     return (
         // <Box sx={{ bgcolor: '#DDEAEE' }}>
-        <Container>
-            <Typography>{setSuccess}</Typography>
-            <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} minWidth='500px'>
+            <Container>
+                <Typography>{setSuccess}</Typography>
                 <Typography variant="h4" gutterBottom component="div">
                     <span style={{ color: 'grey' }}>Available </span>
                     <span style={{ color: 'Olive' }}>Appointment </span>
@@ -68,8 +68,8 @@ const AvailableAppointments = ({ date }) => {
                         ></Bookings>)
                     }
                 </Grid>
-            </Box>
-        </Container >
+            </Container >
+        </Box>
         // </Box>
     );
 };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Alert, Button, Container, FormControl, Grid, OutlinedInput, TextField, Typography, useTheme } from '@mui/material';
-import { Box, height } from '@mui/system';
+import { Box, Button, Container, Grid, TextField, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { makeStyles } from '@mui/styles';
+import SendIcon from '@mui/icons-material/Send';
+
 
 
 const SendMessages = () => {
@@ -40,20 +40,6 @@ const SendMessages = () => {
         e.preventDefault()
     };
 
-
-    const theme = useTheme()
-    const useStyles = makeStyles({
-        responsive: {
-
-            [theme.breakpoints.between('xs', 'sm')]: {
-                background: '#FEF9E7'
-            },
-            // [theme.breakpoints.down('md')]: {
-            //     width: 860
-            // },
-        }
-    });
-    const { responsive } = useStyles()
 
     return (
         <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '80px', marginBottom: '100px', padding: '30px' }} minWidth='500px'>
@@ -124,7 +110,7 @@ const SendMessages = () => {
                         <br />
                         <Button
                             sx={{ mt: 1, bgcolor: '#F14493' }}
-                            type='submit' variant="contained">Send Messages</Button>
+                            type='submit' variant="contained" endIcon={<SendIcon />}>Send Messages</Button>
 
                     </form>
                 </Grid>

@@ -13,20 +13,6 @@ const fixingItems = {
 
 const AppointmentBanner = () => {
 
-    const theme = useTheme()
-    const useStyles = makeStyles({
-        responsive: {
-
-            [theme.breakpoints.between('xs', 'sm')]: {
-                width: 450
-            },
-            // [theme.breakpoints.down('md')]: {
-            //     width: 860
-            // },
-        }
-    });
-    const { responsive } = useStyles()
-
     return (
         <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: '#FEF9E7', marginTop: '70px' }} minWidth='500px'>
             <Container>

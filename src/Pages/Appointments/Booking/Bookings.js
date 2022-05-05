@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Box, Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
+import { Box, Button, Grid, Paper, TextField, Typography } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import useAuth from '../../../Hooks/useAuth/useAuth';
 import { useForm } from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
+import './Booking.css'
 
 const Bookings = ({ booking, date, setSuccess }) => {
 
@@ -64,11 +64,17 @@ const Bookings = ({ booking, date, setSuccess }) => {
         e.preventDefault()
     }
 
+    const style = {
+        textDecoration: 'none',
+        backgroundColor: '#FEF9E7',
+        color: 'salmon',
+        fontSize: 16
+    }
 
     return (
 
-        <Grid item xs={12} sm={4} md={4} sx={{ mt: 4 }}>
-            <Paper sx={{ padding: '15px', borderRadius: '15px' }} >
+        <Grid item xs={4} sm={4} md={4} sx={{ mt: 4 }}>
+            <Paper sx={{ minWidth: 275, padding: '15px', borderRadius: '15px' }} >
                 <Box style={{ display: 'flex', marginLeft: '30px', marginBottom: '25px', justifyContent: 'space-between' }}>
                     <img
                         style={{ width: '25%', }}
@@ -76,10 +82,10 @@ const Bookings = ({ booking, date, setSuccess }) => {
 
                     <Box>
                         <div>
-
-                            <Button style={{ textDecoration: 'none', background: ' #FEF9E7' }} variant="outlined" onClick={handleClickOpen}>
-                                Appoint
+                            <Button className='ok sponsor' variant='outlined' style={style} onClick={handleClickOpen}>
+                                Appointment
                             </Button>
+
 
                             <Dialog open={open} >
                                 <form onSubmit={handleSubmit}>
@@ -167,9 +173,9 @@ const Bookings = ({ booking, date, setSuccess }) => {
 
                     </Box>
 
-                </Box>
-                <Box style={{ textAlign: 'left', marginLeft: '30px' }}>
-                    <Typography variant="h4" gutterBottom component="div">
+                </Box >
+                <Box style={{ textAlign: 'left', marginLeft: '30px', color: 'teal' }}>
+                    <Typography variant="h5" gutterBottom component="div">
                         {name}
                     </Typography>
                     <Typography variant="caption" display="block" gutterBottom>
@@ -177,7 +183,7 @@ const Bookings = ({ booking, date, setSuccess }) => {
                     </Typography>
                 </Box>
 
-            </Paper>
+            </Paper >
         </Grid >
     );
 };

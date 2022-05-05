@@ -5,8 +5,7 @@ import Facetreatment from '../../../Image/Facetreatment.png';
 import Hairstyle from '../../../Image/Hairstyle.png';
 import Skincare from '../../../Image/Skincare.png';
 import Service from '../Service/Service';
-import { Container, Typography, useTheme } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { Container, Typography } from '@mui/material';
 
 const services = [
     {
@@ -31,20 +30,6 @@ const services = [
 
 const Services = () => {
 
-    const theme = useTheme()
-    const useStyles = makeStyles({
-        responsive: {
-
-            [theme.breakpoints.between('xs', 'sm')]: {
-                background: '#fff'
-            },
-            // [theme.breakpoints.down('md')]: {
-            //     width: 860
-            // },
-        },
-    });
-
-    const { responsive } = useStyles();
     return (
 
         <Box sx={{ flexGrow: 1 }} minWidth='500px'>

@@ -6,8 +6,9 @@ import Appointment from '../Appointment/Appointment';
 const DashboardHome = () => {
     const [date, setDate] = React.useState(new Date())
     return (
-        <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
+
+        <Grid container spacing={8}>
+            <Grid item xs={12} md={4} >
                 <Calendar
                     date={date}
                     setDate={setDate}
@@ -18,8 +19,10 @@ const DashboardHome = () => {
                     date={date}
                 />
             </Grid>
-
         </Grid>
+
+
+
     );
 };
 

@@ -5,7 +5,7 @@ import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
 import SendMessages from '../SendMessage/SendMessages';
 import Services from '../Services/Services';
-import Testimonials from '../Testimonials/Testimonials/Testimonials';
+import Testimonial from '../Testimonials/Testimonial/Testimonial';
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
             <Banner />
             <Services />
             <AppointmentBanner />
-            <Testimonials />
+            <Testimonial />
             <SendMessages />
             <Footer />
         </div>

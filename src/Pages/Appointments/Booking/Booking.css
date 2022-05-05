@@ -1,0 +1,10 @@
+.ok:hover {
+
+    transform: scale(1.1);
+    transition: 0.12s ease-out;
+}
+
+.sponsor:hover {
+    transform: rotate(5deg);
+    transition: 0.14s ease-in;
+}

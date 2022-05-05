@@ -9,24 +9,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth/useAuth';
 import { makeStyles } from '@mui/styles';
-import { createTheme, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
+import logob from '../../../Image/logo.png';
+import LoginIcon from '@mui/icons-material/Login';
+
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
 
     const theme = useTheme()
     const useStyle = makeStyles({
-        responsive: {
-            [theme.breakpoints.between('xs', 'sm')]: {
-                background: '#FEF9E7'
-            },
-            // [theme.breakpoints.down('md')]: {
-            //     width: 860
-            // },
-        },
         navItems: {
             color: 'yellowGreen',
             textDecoration: 'none'
@@ -45,6 +40,9 @@ const Navigation = () => {
         logo: {
             [theme.breakpoints.down('sm')]: {
                 textAlign: 'right'
+            },
+            [theme.breakpoints.up('sm')]: {
+                textAlign: 'left'
             }
         },
         mobileIcon: {
@@ -53,7 +51,7 @@ const Navigation = () => {
         }
     })
 
-    const { navItems, desktopNav, mobileNav, logo, mobileIcon, responsive } = useStyle()
+    const { navItems, desktopNav, mobileNav, logo, mobileIcon, } = useStyle()
 
     const [state, setState] = React.useState(false);
 
@@ -82,7 +80,7 @@ const Navigation = () => {
                     user?.email ? <Button onClick={logOut}>Logout</Button>
                         :
                         <NavLink to="/login" className={mobileIcon}>
-                            <Button sx={{ color: '#F14493' }}>Login</Button>
+                            <Button sx={{ color: '#F14493' }}>Login <LoginIcon></LoginIcon></Button>
                         </NavLink>}
             </List>
 
@@ -105,7 +103,7 @@ const Navigation = () => {
                             <MenuIcon sx={{ color: '#F14493' }} />
                         </IconButton>
                         <Typography className={logo} variant="h6" component="div" sx={{ flexGrow: 1, color: '#F14493' }}>
-                            Jerin Parlour
+                            <img src={logob} alt="" width='100px' />
                         </Typography>
                         <Box className={mobileNav} >
                             <NavLink to="/home" className={navItems} >
@@ -120,11 +118,12 @@ const Navigation = () => {
                             <NavLink to="/dashboard" className={navItems}>
                                 <Button color='inherit'>Dashboard</Button>
                             </NavLink>
+
                             {
                                 user?.email ? <Button onClick={logOut}>Logout</Button>
                                     :
                                     <NavLink to="/login" className={navItems}>
-                                        <Button sx={{ color: '#F14493' }}>Login</Button>
+                                        <Button sx={{ color: '#F14493' }}>Login <LoginIcon></LoginIcon></Button>
                                     </NavLink>
                             }
                         </Box>
