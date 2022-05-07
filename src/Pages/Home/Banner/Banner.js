@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import woman from '../../../Image/woman.png';
 import './Banner.css';
+import { NavLink } from 'react-router-dom';
 
 const Banner = () => {
     const style = {
@@ -27,7 +28,9 @@ const Banner = () => {
                                     neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
                                     quasi quidem quibusdam.
                                 </Typography>
-                                <Button variant="contained" sx={{ background: '#F14493' }}>Get Appointment</Button>
+                                <NavLink to='/appointments' style={{ textDecoration: 'none' }}>
+                                    <Button variant="contained" sx={{ background: '#F14493' }} >Get Appointment</Button>
+                                </NavLink>
                             </Box>
                         </Grid>
                     </Grid>
