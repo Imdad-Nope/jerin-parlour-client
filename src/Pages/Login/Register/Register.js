@@ -32,7 +32,7 @@ const Register = () => {
     }
 
     const body = {
-        minHeight: '625px',
+        minHeight: '100vh',
         background: '#b18cc1',
 
     }

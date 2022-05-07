@@ -37,8 +37,8 @@ const Login = () => {
 
     const body = {
         background: 'teal',
-        minHeight: '625px',
-        overflow: "hidden"
+        minHeight: '100vh',
+
     }
 
     const paperStyle = {
@@ -58,12 +58,15 @@ const Login = () => {
         textDecoration: 'none',
         color: '#F14493',
     }
+
     return (
+
         <Grid container
             justify='center'
             alignItems='center'
             direction='column'
             style={body}
+
         >
 
             <Paper style={paperStyle} >
@@ -118,7 +121,6 @@ const Login = () => {
                 </Fab>
             </Paper>
         </Grid>
-
 
 
 
