@@ -20,7 +20,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://peaceful-ocean-02990.herokuapp.com/users/admin', {
+        fetch('https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

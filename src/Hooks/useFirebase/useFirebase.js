@@ -94,7 +94,7 @@ const useFirebase = () => {
     // For making Admin
 
     useEffect(() => {
-        fetch(`https://peaceful-ocean-02990.herokuapp.com/users/${user.email}`)
+        fetch(`https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -113,7 +113,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const users = { email, displayName }
-        fetch("https://peaceful-ocean-02990.herokuapp.com/users", {
+        fetch("https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/users", {
             method: method,
             headers: {
                 'content-type': 'application/json'

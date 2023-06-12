@@ -24,7 +24,7 @@ const AddTestimonials = () => {
         formData.append('image', image);
         formData.append('description', description);
 
-        fetch('https://peaceful-ocean-02990.herokuapp.com/testimonials', {
+        fetch('https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/testimonials', {
             method: 'POST',
             body: formData
         })

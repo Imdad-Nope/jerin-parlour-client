@@ -21,7 +21,7 @@ const SendMessages = () => {
     }
 
     const handleSubmit = e => {
-        fetch(`https://peaceful-ocean-02990.herokuapp.com/addMessages`, {
+        fetch(`https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/addMessages`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

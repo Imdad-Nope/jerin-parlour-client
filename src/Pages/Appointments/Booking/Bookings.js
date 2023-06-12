@@ -44,7 +44,7 @@ const Bookings = ({ booking, date, setSuccess }) => {
             ...appointment
         }
 
-        fetch("https://peaceful-ocean-02990.herokuapp.com/appoint", {
+        fetch("https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/appoint", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -4,9 +4,9 @@ import Patients from '../Patients/Patients';
 
 const Testimonial = () => {
     const [testimonials, setTestimonials] = useState([])
-
+ 
     useEffect(() => {
-        fetch('https://peaceful-ocean-02990.herokuapp.com/testimonials')
+        fetch('https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/testimonials')
             .then(res => res.json())
             .then(data => setTestimonials(data))
     }, [])
