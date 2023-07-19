@@ -39,7 +39,7 @@ const Appointment = ({ date }) => {
     const { user, token } = useAuth()
 
     useEffect(() => {
-        const url = `https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/appointments?email=${user.email}&date=${date}`
+        const url = `https://jerin-parlour-server.onrender.com/appointments?email=${user.email}&date=${date}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -53,7 +53,7 @@ const Appointment = ({ date }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete your appointment?')
         if (proceed) {
-            const url = `https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/appointments/${id}`
+            const url = `https://jerin-parlour-server.onrender.com/appointments/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

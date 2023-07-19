@@ -44,7 +44,7 @@ const Bookings = ({ booking, date, setSuccess }) => {
             ...appointment
         }
 
-        fetch("https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/appoint", {
+        fetch("https://jerin-parlour-server.onrender.com/appoint", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

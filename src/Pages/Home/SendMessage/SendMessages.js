@@ -21,7 +21,7 @@ const SendMessages = () => {
     }
 
     const handleSubmit = e => {
-        fetch(`https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/addMessages`, {
+        fetch(`https://jerin-parlour-server.onrender.com/addMessages`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

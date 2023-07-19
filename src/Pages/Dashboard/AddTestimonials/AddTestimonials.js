@@ -24,7 +24,7 @@ const AddTestimonials = () => {
         formData.append('image', image);
         formData.append('description', description);
 
-        fetch('https://jerin-parlour-server-qw4sb05qp-imdad-nope.vercel.app/testimonials', {
+        fetch('https://jerin-parlour-server.onrender.com/testimonials', {
             method: 'POST',
             body: formData
         })
